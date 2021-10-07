@@ -1,6 +1,6 @@
 // quick sort
-// 快排在最糟糕得情况下时间复杂度是O(n²)，平均的复杂度是O(nlogn)，
-var nums = [9, 10, 1, 2, 8, 4, 5]
+// 快排在最糟糕得情况下时间复杂度是O(n²)，平均的复杂度是O(nlogn)
+var nums = [9, 10, 1, 1, 2, 8, 4, 5]
 var quickSort = function (nums) {
   if (nums.length <= 1) {
     return nums
@@ -9,7 +9,8 @@ var quickSort = function (nums) {
   let pivot = nums.splice(centre, 1)[0] // 取对应数值
   let left = [],
     right = []
-  nums.forEach((element, i) => {
+  nums.forEach((element) => {
+    // '<'和'>'决定升序降序
     if (element < pivot) {
       left.push(element)
     } else {
