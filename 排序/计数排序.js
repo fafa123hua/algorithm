@@ -1,7 +1,7 @@
 // Counting Sort
 // O(n)
 var nums = [9, 10, 1, 1, 2, 8, 4, 5]
-var bucketSort = function (nums) {
+var countingSort = function (nums) {
   let sta = new Array(11) //这里可以将长度定为max-min+1，在一定程度上降低空间消耗
   sta.fill(0)
   let len = nums.length
@@ -27,4 +27,4 @@ var bucketSort = function (nums) {
   }
   return end
 }
-console.log(bucketSort(nums))
+console.log(countingSort(nums))

@@ -17,6 +17,8 @@ var quickSort = function (nums) {
       right.push(element)
     }
   })
+  console.log(left, pivot, right)
+
   return quickSort(left).concat(pivot, quickSort(right)) // 递归
 }
 console.log(quickSort(nums))
