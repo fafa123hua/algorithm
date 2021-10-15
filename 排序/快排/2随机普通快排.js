@@ -9,7 +9,7 @@ var rquickSort = function (nums) {
   let pivot = nums.splice(centre, 1)[0] // 取对应数值
   let left = [],
     right = []
-  nums.forEach((element) => {
+  nums.forEach((element, i) => {
     // '<'和'>'决定升序降序
     if (element < pivot) {
       left.push(element)
@@ -17,7 +17,7 @@ var rquickSort = function (nums) {
       right.push(element)
     }
   })
-  console.log(left, pivot, right)
+  console.log(left, pivot, right, nums, nums.length)
 
   return rquickSort(left).concat(pivot, rquickSort(right)) // 递归
 }
