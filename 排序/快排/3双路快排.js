@@ -15,6 +15,7 @@ var rtwoQuickSort = function (nums) {
     right = []
   let i = 0,
     j = nums.length - 1
+  // 处理在开始的时候i，j指向同一个
   if (i == j) {
     if (nums[0] < pivot) {
       left.push(nums[0])
@@ -40,6 +41,7 @@ var rtwoQuickSort = function (nums) {
     let temp = nums[i]
     nums[i] = nums[j]
     nums[j] = temp
+    //i，j指向同一个
     if (i == j) {
       if (nums[i] < pivot) {
         left.push(nums[i])
