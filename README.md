@@ -327,6 +327,21 @@ console.log(countPrimes(n))
 如果 x 是质数,那么大于的x的倍数 2x,3x ....一定不是质数,
 
 ```js
+let n = 1000
+var countPrimes = function (n) {
+  const isPrime = new Array(n).fill(1)
+  let ans = 0
+  for (let i = 2; i < n; ++i) {
+    if (isPrime[i]) {
+      ans += 1
+      for (let j = i * i; j < n; j += i) {
+        isPrime[j] = 0
+      }
+    }
+  }
+  return ans
+}
+console.log(countPrimes(n))
 
 ```
 
@@ -337,6 +352,24 @@ console.log(countPrimes(n))
 在埃氏筛的基础上，不在重复的去标记数，例如45这个数，它会同时被3，5两个数标记为合数
 
 ```js
+let n = 1000
+var countPrimes = function (n) {
+  const isPrime = new Array(n).fill(1)
+  const primes = []
+  for (let i = 2; i < n; ++i) {
+    if (isPrime[i]) {
+      primes.push(i)
+    }
+    for (let j = 0; j < primes.length && i * primes[j] < n; ++j) {
+      isPrime[i * primes[j]] = 0
+      if (i % primes[j] === 0) {
+        break
+      }
+    }
+  }
+  return primes.length
+}
+console.log(countPrimes(n))
 
 ```
 
